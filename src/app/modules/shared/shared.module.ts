@@ -7,6 +7,6 @@ import { RouterModule } from '@angular/router';
 @NgModule({
   declarations: [SidenavComponent],
   exports: [SidenavComponent],
-  imports: [CommonModule,RouterModule, MaterialModule],
+  imports: [CommonModule, RouterModule, MaterialModule],
 })
 export class SharedModule {}
