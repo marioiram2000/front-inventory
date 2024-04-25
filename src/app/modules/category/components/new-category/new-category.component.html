@@ -1,0 +1,33 @@
+<h2 mat-dialog-title>
+  {{ editando ? "Editar categoría" : "Agregar nueva categoría" }}
+</h2>
+<mat-dialog-content>
+  <form [formGroup]="categoryForm">
+    <div class="category-container">
+      <mat-form-field>
+        <input matInput formControlName="name" placeholder="Nombre" required />
+      </mat-form-field>
+      <mat-form-field>
+        <textarea
+          matInput
+          formControlName="description"
+          placeholder="Desctiption"
+          required
+        ></textarea>
+      </mat-form-field>
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button
+    mat-button
+    color="primary"
+    (click)="onSave()"
+    [disabled]="categoryForm.invalid"
+  >
+    <mat-icon>save</mat-icon> Guardar
+  </button>
+  <button mat-button color="accent" (click)="onCancel()">
+    <mat-icon>cancel</mat-icon> Cancelar
+  </button>
+</mat-dialog-actions>

@@ -1,0 +1,26 @@
+.product-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-container > * {
+  width: 100%;
+}
+
+.input-file{
+  display: none;
+}
+
+.subir {
+  padding: 5px 16px;
+  background: #3f51B5;
+  color: #fff;
+  border: 0px solid #fff;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+.subir:hover{
+  cursor: pointer;
+}
