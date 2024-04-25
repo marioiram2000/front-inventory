@@ -12,7 +12,13 @@
     <div class="right">
       <ul>
         <li>
-          <button mat-raised-button color="primary" (click)="openProductDialog()">Agregar producto</button>
+          <button
+            mat-raised-button
+            color="primary"
+            (click)="openProductDialog()"
+          >
+            Agregar producto
+          </button>
         </li>
       </ul>
     </div>
@@ -48,16 +54,32 @@
       <!-- picture column -->
       <ng-container matColumnDef="picture">
         <th mat-header-cell *matHeaderCellDef>Imagen</th>
-        <td mat-cell *matCellDef="let element"><img [src]="element.picture" [alt]="element.name" class="productImage"/></td>
+        <td mat-cell *matCellDef="let element">
+          <img
+            [src]="element.picture"
+            [alt]="element.name"
+            class="productImage"
+          />
+        </td>
       </ng-container>
       <!-- actions column -->
       <ng-container matColumnDef="actions">
         <th mat-header-cell *matHeaderCellDef>Acciones</th>
         <td mat-cell *matCellDef="let element; let i = index">
-          <button mat-icon-button color="accent" (click)="edit(element)">
+          <button
+            mat-icon-button
+            color="accent"
+            (click)="edit(element)"
+            *ngIf="isAdmin"
+          >
             <mat-icon aria-label="edit">edit</mat-icon>
           </button>
-          <button mat-icon-button color="accent" (click)="delete(element)">
+          <button
+            mat-icon-button
+            color="accent"
+            (click)="delete(element)"
+            *ngIf="isAdmin"
+          >
             <mat-icon aria-label="delete">delete</mat-icon>
           </button>
         </td>

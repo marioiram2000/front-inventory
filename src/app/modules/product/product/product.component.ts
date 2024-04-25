@@ -10,6 +10,7 @@ import {
 } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmDialogComponent } from '../../shared/components/confirm-dialog/confirm-dialog.component';
+import { UtilService } from '../../shared/services/util.service';
 
 @Component({
   selector: 'app-product',
@@ -29,14 +30,19 @@ export class ProductComponent implements OnInit {
   dataSource = new MatTableDataSource<ProductElement>();
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
+  isAdmin: boolean = false;
+
   constructor(
     private productService: ProductService,
     private snackBar: MatSnackBar,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private utilService: UtilService
   ) {}
 
   ngOnInit(): void {
     this.getProducts();
+    this.utilService.getRoles();
+    this.isAdmin = this.utilService.isAdmin();
   }
 
   getProducts() {
