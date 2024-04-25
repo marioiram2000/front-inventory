@@ -17,8 +17,10 @@
             <mat-icon>person_outline</mat-icon>
           </button>
           <mat-menu #menu="matMenu">
-            <mat-icon>exit_to_app</mat-icon>
-            Cerrar Sesión
+            <button mat-menu-item (click)="logout()">
+              <mat-icon>exit_to_app</mat-icon>
+              Cerrar Sesión
+            </button>
           </mat-menu>
         </li>
       </ul>
@@ -39,8 +41,7 @@
       <mat-nav-list>
         <div class="profile-card">
           <div class="header">
-            <h2>Mario Orozco</h2>
-            <h4>morozco@ecna.es</h4>
+            <h2>{{ username }}</h2>
           </div>
         </div>
         <mat-divider></mat-divider>
