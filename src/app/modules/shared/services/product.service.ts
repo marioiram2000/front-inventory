@@ -35,4 +35,9 @@ export class ProductService {
     const endpoint = `${base_url}/products/filter/${str}`;
     return this.http.get(endpoint);
   }
+
+  exportProductsToExcel() {
+    const endpoint = `${base_url}/products/export/excel`;
+    return this.http.get(endpoint, { responseType: 'blob' });
+  }
 }

@@ -58,8 +58,17 @@ export class CategoryService {
    * @param id
    * @returns
    */
-  deleteCategory(id: number){
+  deleteCategory(id: number) {
     const endpoint = `${base_url}/categories/${id}`;
     return this.http.delete(endpoint);
+  }
+
+  /**
+   * exportCategoriesToExcel
+   * @returns
+   */
+  exportCategoriesToExcel() {
+    const endpoint = `${base_url}/categories/export/excel`;
+    return this.http.get(endpoint, { responseType: 'blob' });
   }
 }

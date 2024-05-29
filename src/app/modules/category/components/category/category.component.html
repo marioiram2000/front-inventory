@@ -13,6 +13,15 @@
       <ul>
         <li>
           <button
+            mat-button
+            color="primary"
+            (click)="exportToExcel()"
+          >
+            Exportar a excel
+          </button>
+        </li>
+        <li>
+          <button
             mat-raised-button
             color="primary"
             (click)="openCategoryDialog()"
